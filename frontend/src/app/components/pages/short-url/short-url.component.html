@@ -1,0 +1,20 @@
+<section class="home">
+    <h3 class="heading">
+        LINKLOOM
+    </h3>
+    <h3>You can utilize the URL to be abbreviated here.</h3>
+    <div class="row">
+        <form [formGroup]="urlForm" (ngSubmit)="submit()">
+            <input type="text" id="inputbox" class="box" placeholder="paste url exact url" formControlName="url">
+            <button type="submit" class="btn">shrink url</button>
+        </form>
+    </div>
+    <div *ngIf="urlFormControl['url'].errors && isSubmitted">
+        <p *ngIf="urlFormControl['url'].errors['required']" style="color: red;" >*empty value</p>
+        <p *ngIf="urlFormControl['url'].errors['minlength']" style="color: red;">*its aleady short url</p>
+        <p *ngIf="urlFormControl['url'].errors['pattern']" style="color: red;">*plase check the url format</p>
+    </div>
+    <p *ngIf="!newUrl">We offer concise URLs that are entirely free to utilize, providing a universal link shortening service that simplifies sharing.</p>
+    <p style="margin-top: 1rem;">{{newUrl}}</p>
+    <button class="btn-copy" *ngIf="newUrl" (click)="copyUrlToClipboard()">Copy URL</button>
+</section>

@@ -1,0 +1,25 @@
+<section class="home">
+    <h3 class="heading">
+       PIXELTRACE
+    </h3>
+    <h3>here providing service is analyse your shortened url total clicks and visit history</h3>
+    <div class="row">
+        <form [formGroup]="urlForm" (ngSubmit)="submit()">
+            <input type="text" id="inputbox" class="box" placeholder="paste url" formControlName="url">
+            <button type="submit" class="btn">check count</button>
+        </form>
+    </div>
+    <div *ngIf="urlFormControl['url'].errors&& isSubmitted">
+        <p *ngIf="urlFormControl['url'].errors['required'] && isSubmitted" style="color: red;">*empty value</p>
+        <p *ngIf="urlFormControl['url'].errors['pattern']" style="color: red;">*plase check the url format</p>
+    </div>
+    <p style="margin-top: 1rem;" *ngIf="!analyticsData">we are providing unshortened url history is completely free to use and general watch time and number of clicks</p>
+    <div class="container" *ngIf="analyticsData">
+        <h4 class="clicks">total Clicks: <span>{{analyticsData.totalClicks}}</span></h4>
+        <div class="box-container">
+            <div class="box" *ngFor="let item of  analyticsData.analytics">
+                {{item.timestamp | date:'mediumTime'}}
+            </div>
+        </div>
+    </div>
+</section>

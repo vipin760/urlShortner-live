@@ -1,0 +1,17 @@
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #777;
+    justify-content: center;
+}
+footer .content{
+    padding: 2rem;  
+}
+footer .content a{
+    font-size: 1.4rem;
+    color: #fff;
+    text-transform: lowercase;
+}

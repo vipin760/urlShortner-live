@@ -1,0 +1,20 @@
+<section class="home">
+    <h3 class="heading">
+        SWIFTPATH
+    </h3>
+    <h3>You can utilize our service to discover your precise URLs</h3>
+    <div class="row">
+        <form [formGroup]="urlForm" (ngSubmit)="submit()">
+            <input type="text" id="inputbox" class="box" placeholder="paste shorted url" formControlName="url">
+            <button type="submit" class="btn">check url</button>
+        </form>
+    </div>
+    <div *ngIf="urlFormControl['url'].errors&&isSubmitted">
+        <p *ngIf="urlFormControl['url'].errors['required']" style="color: red;">*empty value</p>
+        <p *ngIf="urlFormControl['url'].errors['pattern']" style="color: red;">*plase check the url format</p>
+    </div>
+    <div class="content">
+        <p *ngIf="!oldUrl">we are providing unshortened url is completely free to use and general unshortened link to use create a making to easy to check</p>
+    <p style="margin-top: 1rem;">{{oldUrl}}</p>
+    </div>
+</section>

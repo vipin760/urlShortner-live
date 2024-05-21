@@ -1,0 +1,39 @@
+
+.service .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    gap: 2rem;
+}
+.service .box-container .box{
+    text-align: center;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    padding: 2.5rem;
+}
+.service .box-container .box:hover{
+   transform: scale(1.1);
+   box-shadow: 1.5rem 1.5rem 1.5rem rgb(0,0,0,0.2);
+   transition: all 2s ease-in-out;
+}
+.service .box-container .box i{
+        color: var(--text-color);
+        font-size: 5rem;
+        padding-bottom: 1rem;
+}
+.service .box-container .box h3{
+    color: var(--text-color);
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
+}
+.service .box-container .box p{
+    color: var(--text-color);
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+@media (max-width:400px){
+    .header .logo{
+        font-size:1.5rem;
+    }
+}
